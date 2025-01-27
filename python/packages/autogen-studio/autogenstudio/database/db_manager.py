@@ -10,7 +10,7 @@ from sqlmodel import Session, SQLModel, and_, create_engine, select
 from ..datamodel import Response, Team
 from ..teammanager import TeamManager
 from .schema_manager import SchemaManager
-
+from autogen_core import ComponentModel
 
 
 class DatabaseManager:
@@ -274,7 +274,7 @@ class DatabaseManager:
             # Store in database
             team_db = Team(
                 user_id=user_id,
-                config=config
+                component=config
             )
             
             result = self.upsert(team_db)
