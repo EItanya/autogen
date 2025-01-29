@@ -148,7 +148,7 @@ class WebSocketManager:
             db_message = Message(
                 session_id=run.session_id,
                 run_id=run_id,
-                config=message.model_dump(),
+                component=message.model_dump(),
                 user_id=None,  # You might want to pass this from somewhere
             )
             self.db_manager.upsert(db_message)
