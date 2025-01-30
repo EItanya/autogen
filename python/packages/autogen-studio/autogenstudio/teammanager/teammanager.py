@@ -68,7 +68,7 @@ class TeamManager:
         if isinstance(team_config, (str, Path)):
             config = await self.load_from_file(team_config)
         elif isinstance(team_config, dict):
-            config = team_config.get("component", team_config)
+            config = team_config
         else:
             config = team_config.model_dump()
 
